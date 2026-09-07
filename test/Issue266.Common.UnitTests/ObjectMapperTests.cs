@@ -19,7 +19,12 @@ public class ObjectMapperTests
     [TestMethod]
     public void ToHalfWidth_單一物件名稱_應該轉換成功()
     {
-        var model = new TestModel { Id = 1, Name = "Ｔｅｓｔ", IsActive = true };
+        var model = new TestModel
+        {
+            Id = 1,
+            Name = "Ｔｅｓｔ",
+            IsActive = true,
+        };
 
         model.Name.ToHalfWidth().Should().Be("Test");
         model.Id.Should().Be(1);
