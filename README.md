@@ -36,23 +36,23 @@ Previously Test Explorer showed only a subset, parent node was nested helper typ
 
 After the fix, the original 5 classes list correctly (56 tests):
 
-| Class | Tests |
-| --- | --- |
-| `MoreStringHelperTests` | 12 |
-| `ObjectMapperTests` | 12 |
-| `RequiredTextAttributeTests` | 7 |
-| `StringHelperTests` | 15 |
-| `ValidTextListAttributeTests` | 10 |
+| Class                         | Tests |
+| ----------------------------- | ----- |
+| `MoreStringHelperTests`       | 12    |
+| `ObjectMapperTests`           | 12    |
+| `RequiredTextAttributeTests`  | 7     |
+| `StringHelperTests`           | 15    |
+| `ValidTextListAttributeTests` | 10    |
 
 ### Actual — follow-up: `DataRow` display / incomplete run
 
 See `AddressHelperTests`. CLI lists every DataRow. Test Explorer does not.
 
-| Method | CLI DataRows | Test Explorer |
-| --- | --- | --- |
-| `FindZipCode_簡單參數_Should正常列出` | 3 | Control: plain string args, should list normally |
-| `FindZipCode_無法命中_Should回傳後兩碼歸零` | 5 | Labels truncate (`... ("`), some children stay unrun / look like leftover JSON |
-| `FindZipCode_符合範圍模板_Should回傳對應郵遞區號` | 120 | Some DataRows missing; cannot run the full set from Test Explorer |
+| Method                                            | CLI DataRows | Test Explorer                                                                  |
+| ------------------------------------------------- | ------------ | ------------------------------------------------------------------------------ |
+| `FindZipCode_簡單參數_Should正常列出`             | 3            | Control: plain string args, should list normally                               |
+| `FindZipCode_無法命中_Should回傳後兩碼歸零`       | 5            | Labels truncate (`... ("`), some children stay unrun / look like leftover JSON |
+| `FindZipCode_符合範圍模板_Should回傳對應郵遞區號` | 120          | Some DataRows missing; cannot run the full set from Test Explorer              |
 
 CLI total after this follow-up: **184** (56 original + 128 DataRows). All 184 pass via `dotnet test`.
 
